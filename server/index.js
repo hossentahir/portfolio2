@@ -2,10 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
+const path = require('path');
 const healthRoutes = require('./routes/health');
 const authRoutes = require('./routes/auth');
 const projectRoutes = require('./routes/projects');
 const blogRoutes = require('./routes/blogs');
+const uploadRoutes = require('./routes/upload');
 
 // Load environment variables
 dotenv.config();
@@ -19,11 +21,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Serve static uploads folder (for local fallback)
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 // Routes
 app.use('/api/health', healthRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/blogs', blogRoutes);
+app.use('/api/upload', uploadRoutes);
 
 // Root Route
 app.use('/', (req, res, next) => {
