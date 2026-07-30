@@ -5,6 +5,7 @@ const connectDB = require('./config/db');
 const healthRoutes = require('./routes/health');
 const authRoutes = require('./routes/auth');
 const projectRoutes = require('./routes/projects');
+const blogRoutes = require('./routes/blogs');
 
 // Load environment variables
 dotenv.config();
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use('/api/health', healthRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/projects', projectRoutes);
+app.use('/api/blogs', blogRoutes);
 
 // Root Route
 app.use('/', (req, res, next) => {
