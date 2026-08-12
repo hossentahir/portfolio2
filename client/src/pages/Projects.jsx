@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ExternalLink, Layers, Search, Code, AlertCircle, RefreshCw, FolderGit2 } from 'lucide-react';
+import api from '../api/axios';
 
 export const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -12,10 +13,8 @@ export const Projects = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('http://localhost:5000/api/projects');
-      if (!res.ok) throw new Error(`Server returned HTTP ${res.status}`);
-      const data = await res.json();
-      setProjects(data);
+      const res = await api.get('/projects');
+      setProjects(res.data);
     } catch (err) {
       console.warn('Backend API fetch error, utilizing fallback projects data:', err.message);
       setError('Could not connect to live backend API. Displaying sample projects.');

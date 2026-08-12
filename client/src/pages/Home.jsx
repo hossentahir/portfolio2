@@ -2,6 +2,7 @@ import { Hero } from '../components/Hero';
 import { Projects } from './Projects';
 import { useState } from 'react';
 import { Activity, CheckCircle2, AlertTriangle, RefreshCw } from 'lucide-react';
+import api from '../api/axios';
 
 export const Home = () => {
   const [healthStatus, setHealthStatus] = useState(null);
@@ -12,12 +13,10 @@ export const Home = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('http://localhost:5000/api/health');
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      setHealthStatus(data);
+      const res = await api.get('/health');
+      setHealthStatus(res.data);
     } catch (err) {
-      setError(err.message || 'Server connection offline');
+      setError(err.response?.data?.message || err.message || 'Server connection offline');
     } finally {
       setLoading(false);
     }
