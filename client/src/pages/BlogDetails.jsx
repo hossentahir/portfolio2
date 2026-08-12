@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calendar, Tag, AlertCircle } from 'lucide-react';
 import DOMPurify from 'dompurify';
 import api from '../api/axios';
@@ -80,7 +81,13 @@ export const BlogDetails = () => {
   }
 
   return (
-    <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <>
+      <Helmet>
+        <title>{blog.title} | Tahir Hossen Blog</title>
+        <meta name="description" content={`Read ${blog.title} on Tahir Hossen's portfolio.`} />
+      </Helmet>
+
+      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       
       {/* Back Button */}
       <Link
@@ -148,5 +155,6 @@ export const BlogDetails = () => {
       </div>
 
     </article>
+    </>
   );
 };

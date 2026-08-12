@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Calendar, Tag, ChevronLeft, ChevronRight, BookOpen, AlertCircle, RefreshCw } from 'lucide-react';
+import toast from 'react-hot-toast';
 import api from '../api/axios';
 
 export const Blogs = () => {
@@ -29,6 +31,7 @@ export const Blogs = () => {
     } catch (err) {
       console.warn('Backend API fetch error, using fallback blog data:', err.message);
       setError('Could not connect to live backend API. Displaying sample blogs.');
+      toast.error('Could not connect to backend API. Displaying sample articles.');
       setBlogs([
         {
           _id: '1',
@@ -81,17 +84,23 @@ export const Blogs = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-      
-      {/* Page Title & Intro */}
-      <div className="text-center max-w-3xl mx-auto mb-12">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
-          Latest <span className="text-indigo-600 dark:text-indigo-400">Articles</span>
-        </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-          Thoughts, technical guides, and architectural insights on modern full-stack web engineering.
-        </p>
-      </div>
+    <>
+      <Helmet>
+        <title>Technical Articles &amp; Blog | Tahir Hossen</title>
+        <meta name="description" content="Technical guides, MERN stack tutorials, and web engineering articles written by Tahir Hossen." />
+      </Helmet>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        
+        {/* Page Title & Intro */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
+            Latest <span className="text-indigo-600 dark:text-indigo-400">Articles</span>
+          </h1>
+          <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            Thoughts, technical guides, and architectural insights on modern full-stack web engineering.
+          </p>
+        </div>
 
       {/* Offline API Warning Banner */}
       {error && (
@@ -228,5 +237,6 @@ export const Blogs = () => {
       )}
 
     </div>
+    </>
   );
 };

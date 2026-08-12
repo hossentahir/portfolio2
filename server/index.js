@@ -8,6 +8,7 @@ const authRoutes = require('./routes/auth');
 const projectRoutes = require('./routes/projects');
 const blogRoutes = require('./routes/blogs');
 const uploadRoutes = require('./routes/upload');
+const contactRoutes = require('./routes/contact');
 
 // Load environment variables
 dotenv.config();
@@ -36,6 +37,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/blogs', blogRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/contact', contactRoutes);
 
 // Root Route
 app.use('/', (req, res, next) => {

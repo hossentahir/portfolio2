@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ExternalLink, Layers, Search, Code, AlertCircle, RefreshCw, FolderGit2 } from 'lucide-react';
+import toast from 'react-hot-toast';
 import api from '../api/axios';
 
 export const Projects = () => {
@@ -18,6 +20,7 @@ export const Projects = () => {
     } catch (err) {
       console.warn('Backend API fetch error, utilizing fallback projects data:', err.message);
       setError('Could not connect to live backend API. Displaying sample projects.');
+      toast.error('Could not connect to backend API. Displaying sample projects.');
       setProjects([
         {
           _id: '1',
@@ -70,16 +73,22 @@ export const Projects = () => {
   });
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-      
-      {/* Header */}
-      <div className="text-center max-w-3xl mx-auto mb-12">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
-          Featured <span className="text-indigo-600 dark:text-indigo-400">Projects</span>
-        </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-          Explore my latest full-stack software applications, open-source work, and REST API services built with the MERN stack.
-        </p>
+    <>
+      <Helmet>
+        <title>Projects &amp; Portfolio | Tahir Hossen</title>
+        <meta name="description" content="Explore full-stack software applications, open-source projects, and MERN stack systems created by Tahir Hossen." />
+      </Helmet>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
+            Featured <span className="text-indigo-600 dark:text-indigo-400">Projects</span>
+          </h1>
+          <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            Explore my latest full-stack software applications, open-source work, and REST API services built with the MERN stack.
+          </p>
       </div>
 
       {/* Search and Technology Filter Bar */}
@@ -239,5 +248,6 @@ export const Projects = () => {
       )}
 
     </div>
+    </>
   );
 };
