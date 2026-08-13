@@ -1,12 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const { createContact, getContacts } = require('../controllers/contactController');
+const {
+  createContact,
+  getContacts,
+  toggleReadStatus,
+  deleteContact
+} = require('../controllers/contactController');
 const { protect, admin } = require('../middleware/authMiddleware');
 
-// POST /api/contact - Submit contact form (Public)
+// Public route
 router.post('/', createContact);
 
-// GET /api/contact - List contact messages (Protected Admin)
+// Protected Admin routes
 router.get('/', protect, admin, getContacts);
+router.put('/:id/read', protect, admin, toggleReadStatus);
+router.delete('/:id', protect, admin, deleteContact);
 
 module.exports = router;
