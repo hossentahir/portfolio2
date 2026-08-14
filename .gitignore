@@ -9,6 +9,10 @@ client/node_modules/
 server/.env
 client/.env
 
+# Uploads
+server/uploads/
+uploads/
+
 # Build outputs
 client/dist/
 dist/
