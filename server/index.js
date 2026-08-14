@@ -18,14 +18,29 @@ connectDB();
 
 const app = express();
 
-// Middleware
-const corsOptions = {
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+// CORS Middleware with allowed origins
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://portfolio2-sazzad6.vercel.app'
+];
+
+if (process.env.CLIENT_URL && !allowedOrigins.includes(process.env.CLIENT_URL)) {
+  allowedOrigins.push(process.env.CLIENT_URL);
+}
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
-};
-app.use(cors(corsOptions));
+}));
+
 app.use(express.json());
 
 // Serve static uploads folder (for local fallback)
