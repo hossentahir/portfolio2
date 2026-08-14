@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { FaGithub, FaLinkedin, FaEnvelope, FaGraduationCap, FaBriefcase, FaCode, FaCheckCircle, FaLaptopCode, FaBook, FaExternalLinkAlt, FaTag } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaGraduationCap, FaBriefcase, FaCode, FaCheckCircle, FaLaptopCode, FaBook, FaExternalLinkAlt, FaTag, FaDownload } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
 import { SiResearchgate } from 'react-icons/si';
 
@@ -106,18 +106,27 @@ export const About = () => {
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        
+
         {/* Page Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
             About <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">Sazzad Hossen</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-            Software Engineering Student at Daffodil International University (CGPA 3.7) &amp; Full-Stack MERN Developer.
+            Software Engineering Student at Daffodil International University (CGPA 3.7) &amp; Full-Stack Developer.
           </p>
 
-          {/* Social Links Buttons */}
+          {/* Social Links & Download CV Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+            <a
+              href="/cv/sazzad-hossen-cv.pdf"
+              download
+              className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-semibold text-sm text-white bg-indigo-600 hover:bg-indigo-500 shadow-md shadow-indigo-600/20 transition-all transform hover:-translate-y-0.5"
+            >
+              <FaDownload className="w-4 h-4" />
+              <span>Download CV</span>
+            </a>
+
             <a
               href="https://github.com/hossentahir"
               target="_blank"
@@ -289,7 +298,7 @@ export const About = () => {
             {experiences.map((exp, idx) => (
               <div key={idx} className="relative group">
                 <div className="absolute -left-[31px] md:-left-[39px] top-1.5 w-5 h-5 rounded-full bg-indigo-600 border-4 border-white dark:border-slate-950 shadow-md" />
-                
+
                 <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm hover:border-indigo-300 dark:hover:border-indigo-800 transition-colors">
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                     <h3 className="text-xl font-bold text-slate-900 dark:text-white">

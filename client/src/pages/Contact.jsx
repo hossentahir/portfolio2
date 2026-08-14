@@ -57,8 +57,8 @@ export const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Me | Tahir Hossen</title>
-        <meta name="description" content="Send a message to Tahir Hossen for project inquiries, collaborations, or engineering roles." />
+        <title>Contact Me | Sazzad Hossen</title>
+        <meta name="description" content="Send a message to Sazzad Hossen for project inquiries, collaborations, or engineering roles." />
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
@@ -102,8 +102,8 @@ export const Contact = () => {
                   </div>
                   <div>
                     <div className="text-xs font-semibold uppercase tracking-wider text-slate-400">Email</div>
-                    <a href="mailto:sazzadhossentahir@gmail.com" className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
-                      sazzadhossentahir@gmail.com
+                    <a href="mailto:sazzademon009@gmail.com" className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
+                      sazzademon009@gmail.com
                     </a>
                   </div>
                 </div>

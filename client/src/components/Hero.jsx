@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from 'react-icons/fa';
+import { TypingEffect } from './TypingEffect';
 
 export const Hero = () => {
   return (
@@ -10,37 +11,52 @@ export const Hero = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          
-          {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800/80 mb-6">
+
+          {/* Status Badge with sazzad.engr */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800/80 mb-6">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            Software Engineering Student @ DIU (CGPA 3.7)
+            sazzad.engr | Software Engineering Student
           </div>
 
           {/* Headline / Name */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-4">
             Hi, I'm{' '}
             <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
               Sazzad Hossen
             </span>
           </h1>
 
+          {/* Reusable Typing Effect Role Line */}
+          <div className="text-xl sm:text-2xl font-semibold text-slate-700 dark:text-slate-200 mb-6 flex items-center justify-center gap-2">
+            <span>I am a</span>
+            <TypingEffect />
+          </div>
+
           {/* Short Intro */}
-          <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
-            Full-Stack Developer, Cofounder of SPC Academy, and Competitive Programmer building real-world software solutions.
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-8 max-w-2xl mx-auto">
+            Cofounder of SPC Academy and Competitive Programmer passionate about building robust web applications and solving real-world software challenges.
           </p>
 
           {/* Call To Action Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+            <a
+              href="/cv/sazzad-hossen-cv.pdf"
+              download
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-white bg-indigo-600 hover:bg-indigo-500 shadow-lg shadow-indigo-600/25 dark:shadow-indigo-900/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+            >
+              <FaDownload className="w-4 h-4" />
+              <span>Download CV</span>
+            </a>
+
             <Link
               to="/projects"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-white bg-indigo-600 hover:bg-indigo-500 shadow-lg shadow-indigo-600/25 dark:shadow-indigo-900/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-all"
             >
-              Explore Projects
-              <ArrowRight className="w-4 h-4" />
+              <span>Explore Projects</span>
+              <ArrowRight className="w-4 h-4 text-indigo-500" />
             </Link>
 
             <a
