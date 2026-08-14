@@ -21,7 +21,7 @@ const app = express();
 // CORS Middleware with allowed origins
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://sazzad-hossen.vercel.app'
+  'https://sazzad-engr.vercel.app'
 ];
 
 if (process.env.CLIENT_URL && !allowedOrigins.includes(process.env.CLIENT_URL)) {
