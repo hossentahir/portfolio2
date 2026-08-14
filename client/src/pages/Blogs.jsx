@@ -75,12 +75,25 @@ export const Blogs = () => {
     fetchBlogs(page, selectedTag);
   }, [page, selectedTag]);
 
-  // Helper to extract clean short excerpt
-  const getExcerpt = (text, maxLength = 130) => {
+  // Helper to decode HTML entities (&nbsp;, &amp;, &lt;, &gt;, etc.) safely
+  const decodeHtmlEntities = (text) => {
     if (!text) return '';
-    const cleanText = text.replace(/#|\*|`|\[|\]/g, '').trim();
-    if (cleanText.length <= maxLength) return cleanText;
-    return cleanText.substring(0, maxLength) + '...';
+    const txt = document.createElement('textarea');
+    txt.innerHTML = text;
+    return txt.value;
+  };
+
+  // Helper to extract clean plain text excerpt (stripping HTML tags & decoding entities)
+  const getExcerpt = (htmlOrText, maxLength = 130) => {
+    if (!htmlOrText) return '';
+    // 1. Strip HTML tags
+    const noHtml = htmlOrText.replace(/<[^>]*>?/gm, ' ');
+    // 2. Decode HTML entities
+    const decoded = decodeHtmlEntities(noHtml);
+    // 3. Clean markdown symbols and extra whitespace
+    const clean = decoded.replace(/#|\*|`|\[|\]/g, '').replace(/\s+/g, ' ').trim();
+    if (clean.length <= maxLength) return clean;
+    return clean.substring(0, maxLength) + '...';
   };
 
   return (
@@ -123,7 +136,7 @@ export const Blogs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[1, 2, 3].map((i) => (
             <div key={i} className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm animate-pulse">
-              <div className="h-48 bg-slate-200 dark:bg-slate-800" />
+              <div className="aspect-video w-full bg-slate-200 dark:bg-slate-800" />
               <div className="p-6 space-y-4">
                 <div className="h-4 bg-slate-200 dark:bg-slate-800 rounded w-1/3" />
                 <div className="h-6 bg-slate-200 dark:bg-slate-800 rounded w-3/4" />
@@ -149,8 +162,8 @@ export const Blogs = () => {
               key={blog._id}
               className="group flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
-              {/* Thumbnail */}
-              <Link to={`/blog/${blog.slug}`} className="relative h-48 w-full bg-slate-100 dark:bg-slate-800 overflow-hidden block">
+              {/* Thumbnail with aspect-video and object-cover */}
+              <Link to={`/blog/${blog.slug}`} className="relative aspect-video w-full bg-slate-100 dark:bg-slate-800 overflow-hidden block">
                 {blog.thumbnail ? (
                   <img
                     src={blog.thumbnail}

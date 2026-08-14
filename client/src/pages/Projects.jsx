@@ -172,10 +172,10 @@ export const Projects = () => {
           {filteredProjects.map((project) => (
             <article
               key={project._id}
-              className="group flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="group flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-full min-w-0"
             >
-              {/* Project Image */}
-              <div className="relative h-48 w-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+              {/* Project Cover Image with aspect-video and object-cover */}
+              <div className="relative aspect-video w-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
                 {project.imageUrl ? (
                   <img
                     src={project.imageUrl}
@@ -190,13 +190,13 @@ export const Projects = () => {
                 )}
               </div>
 
-              {/* Card Content */}
-              <div className="flex flex-col flex-grow p-6">
-                <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+              {/* Card Content with proper flexbox and text wrapping */}
+              <div className="flex flex-col flex-grow p-6 w-full min-w-0">
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-2 break-words">
                   {project.title}
                 </h2>
 
-                <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 flex-grow">
+                <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 flex-grow line-clamp-3 break-words overflow-hidden">
                   {project.description}
                 </p>
 

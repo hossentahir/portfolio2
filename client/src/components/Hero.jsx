@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Terminal, Code2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 export const Hero = () => {
   return (
@@ -16,24 +17,24 @@ export const Hero = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            Available for new opportunities
+            Software Engineering Student @ DIU (CGPA 3.7)
           </div>
 
           {/* Headline / Name */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-6">
             Hi, I'm{' '}
             <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
-              Tahir Hossen
+              Sazzad Hossen
             </span>
           </h1>
 
           {/* Short Intro */}
           <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
-            Full-Stack Software Engineer crafting robust, performant MERN applications, sleek user interfaces, and scalable API backend systems.
+            Full-Stack Developer, Cofounder of SPC Academy, and Competitive Programmer building real-world software solutions.
           </p>
 
           {/* Call To Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
             <Link
               to="/projects"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-white bg-indigo-600 hover:bg-indigo-500 shadow-lg shadow-indigo-600/25 dark:shadow-indigo-900/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
@@ -43,25 +44,41 @@ export const Hero = () => {
             </Link>
 
             <a
-              href="https://github.com"
+              href="https://github.com/hossentahir"
               target="_blank"
               rel="noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-all"
             >
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-              </svg>
-              GitHub Profile
+              <FaGithub className="w-4 h-4" />
+              <span>GitHub</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/sazzad-hossen-646bb0233/"
+              target="_blank"
+              rel="noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white bg-[#0A66C2] hover:bg-[#084e96] shadow-md shadow-blue-500/20 transition-all"
+            >
+              <FaLinkedin className="w-4 h-4" />
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href="mailto:sazzademon009@gmail.com"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-all"
+            >
+              <FaEnvelope className="w-4 h-4 text-indigo-500" />
+              <span>Email</span>
             </a>
           </div>
 
           {/* Tech Stack Pills */}
           <div className="pt-8 border-t border-slate-200 dark:border-slate-800/80">
             <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-4">
-              Core Technologies
+              Core Technologies &amp; Tools
             </p>
             <div className="flex flex-wrap items-center justify-center gap-2">
-              {['MongoDB', 'Express.js', 'React', 'Node.js', 'Tailwind CSS', 'Mongoose', 'REST API'].map((tech) => (
+              {['JavaScript', 'MERN Stack', 'Java (Spring Boot)', 'C/C++', 'PHP', 'SQL / MySQL', 'SQA', 'IoT', 'Tailwind CSS'].map((tech) => (
                 <span
                   key={tech}
                   className="px-3 py-1 rounded-md text-xs font-medium bg-slate-100 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/60"

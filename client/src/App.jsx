@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Home } from './pages/Home';
@@ -48,9 +49,40 @@ function App() {
             </main>
             
             {/* Footer */}
-            <footer className="border-t border-slate-200 dark:border-slate-800 py-6 text-center text-xs text-slate-500 dark:text-slate-400">
-              <div className="max-w-7xl mx-auto px-4">
-                © {new Date().getFullYear()} Tahir Hossen. Built with MERN Stack &amp; Tailwind CSS v4.
+            <footer className="border-t border-slate-200 dark:border-slate-800 py-8 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md text-xs text-slate-500 dark:text-slate-400">
+              <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div>
+                  © {new Date().getFullYear()} <strong className="text-slate-800 dark:text-slate-200">Sazzad Hossen</strong>. Built with MERN Stack &amp; Tailwind CSS v4.
+                </div>
+
+                {/* Footer Social Links */}
+                <div className="flex items-center gap-4 text-base">
+                  <a
+                    href="https://github.com/hossentahir"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                    title="GitHub Profile"
+                  >
+                    <FaGithub />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/sazzad-hossen-646bb0233/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                    title="LinkedIn Profile"
+                  >
+                    <FaLinkedin />
+                  </a>
+                  <a
+                    href="mailto:sazzademon009@gmail.com"
+                    className="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                    title="Send Email"
+                  >
+                    <FaEnvelope />
+                  </a>
+                </div>
               </div>
             </footer>
           </div>

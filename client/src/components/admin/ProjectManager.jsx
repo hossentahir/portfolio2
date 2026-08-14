@@ -369,9 +369,9 @@ export const ProjectManager = () => {
           {projects.map((project) => (
             <div
               key={project._id}
-              className="group flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-all"
+              className="group flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-all w-full min-w-0"
             >
-              <div className="relative h-44 w-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+              <div className="relative aspect-video w-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
                 {project.imageUrl ? (
                   <img src={project.imageUrl} alt="" className="w-full h-full object-cover" />
                 ) : (
@@ -398,11 +398,11 @@ export const ProjectManager = () => {
                 </div>
               </div>
 
-              <div className="p-5 flex flex-col flex-grow">
-                <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-2">
+              <div className="p-5 flex flex-col flex-grow w-full min-w-0">
+                <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-2 line-clamp-2 break-words">
                   {project.title}
                 </h3>
-                <p className="text-slate-600 dark:text-slate-300 text-xs leading-relaxed mb-4 flex-grow line-clamp-2">
+                <p className="text-slate-600 dark:text-slate-300 text-xs leading-relaxed mb-4 flex-grow line-clamp-3 break-words overflow-hidden">
                   {project.description}
                 </p>
 

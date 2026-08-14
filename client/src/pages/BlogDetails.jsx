@@ -55,7 +55,7 @@ export const BlogDetails = () => {
       <div className="max-w-4xl mx-auto px-4 py-16">
         <div className="h-8 bg-slate-200 dark:bg-slate-800 rounded w-1/4 mb-8 animate-pulse" />
         <div className="h-12 bg-slate-200 dark:bg-slate-800 rounded w-3/4 mb-4 animate-pulse" />
-        <div className="h-64 bg-slate-200 dark:bg-slate-800 rounded-2xl mb-8 animate-pulse" />
+        <div className="aspect-video w-full bg-slate-200 dark:bg-slate-800 rounded-2xl mb-8 animate-pulse" />
         <div className="space-y-4">
           <div className="h-4 bg-slate-200 dark:bg-slate-800 rounded w-full animate-pulse" />
           <div className="h-4 bg-slate-200 dark:bg-slate-800 rounded w-5/6 animate-pulse" />
@@ -87,74 +87,74 @@ export const BlogDetails = () => {
         <meta name="description" content={`Read ${blog.title} on Tahir Hossen's portfolio.`} />
       </Helmet>
 
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      
-      {/* Back Button */}
-      <Link
-        to="/blogs"
-        className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 mb-8 transition-colors"
-      >
-        <ArrowLeft className="w-4 h-4" />
-        Back to Blogs
-      </Link>
+      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full max-w-full overflow-x-hidden">
+        
+        {/* Back Button */}
+        <Link
+          to="/blogs"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 mb-8 transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Back to Blogs
+        </Link>
 
-      {/* Header Info */}
-      <div className="mb-8">
-        <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-500 dark:text-slate-400 mb-4">
-          <span className="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full">
-            <Calendar className="w-3.5 h-3.5 text-indigo-500" />
-            {new Date(blog.createdAt).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })}
-          </span>
-        </div>
-
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-6">
-          {blog.title}
-        </h1>
-
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-8">
-          {blog.tags?.map((tag) => (
-            <span
-              key={tag}
-              className="inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800"
-            >
-              <Tag className="w-3 h-3" />
-              {tag}
+        {/* Header Info */}
+        <div className="mb-8">
+          <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-500 dark:text-slate-400 mb-4">
+            <span className="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full">
+              <Calendar className="w-3.5 h-3.5 text-indigo-500" />
+              {new Date(blog.createdAt).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
             </span>
-          ))}
-        </div>
-      </div>
+          </div>
 
-      {/* Hero Thumbnail */}
-      {blog.thumbnail && (
-        <div className="mb-10 rounded-2xl overflow-hidden shadow-lg border border-slate-200 dark:border-slate-800 max-h-[480px]">
-          <img
-            src={blog.thumbnail}
-            alt={blog.title}
-            className="w-full h-full object-cover"
-          />
-        </div>
-      )}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-6 break-words">
+            {blog.title}
+          </h1>
 
-      {/* Sanitized HTML Content Rendering using DOMPurify */}
-      <div className="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed space-y-6 text-base sm:text-lg">
-        {isHtml(blog.content) ? (
-          <div
-            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.content) }}
-            className="[&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:dark:text-white [&_h2]:mt-8 [&_h2]:mb-4 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-slate-900 [&_h3]:dark:text-white [&_h3]:mt-6 [&_h3]:mb-3 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_p]:mb-4"
-          />
-        ) : (
-          blog.content.split('\n\n').map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mb-8">
+            {blog.tags?.map((tag) => (
+              <span
+                key={tag}
+                className="inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800"
+              >
+                <Tag className="w-3 h-3" />
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Hero Thumbnail (Full image display with object-contain) */}
+        {blog.thumbnail && (
+          <div className="mb-10 rounded-2xl overflow-hidden shadow-lg border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-900/80 w-full max-h-[500px] flex items-center justify-center p-2">
+            <img
+              src={blog.thumbnail}
+              alt={blog.title}
+              className="w-full max-h-[480px] object-contain mx-auto rounded-xl"
+            />
+          </div>
         )}
-      </div>
 
-    </article>
+        {/* Sanitized HTML Content Rendering with Overflow Protection */}
+        <div className="prose dark:prose-invert max-w-full overflow-x-hidden text-slate-700 dark:text-slate-300 leading-relaxed space-y-6 text-base sm:text-lg break-words [word-break:break-word] [&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-2xl [&_table]:max-w-full [&_table]:block [&_table]:overflow-x-auto [&_pre]:max-w-full [&_pre]:overflow-x-auto [&_code]:break-all [&_a]:break-all">
+          {isHtml(blog.content) ? (
+            <div
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.content) }}
+              className="[&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:dark:text-white [&_h2]:mt-8 [&_h2]:mb-4 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-slate-900 [&_h3]:dark:text-white [&_h3]:mt-6 [&_h3]:mb-3 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_p]:mb-4 [&_p]:break-words [&_img]:max-w-full [&_img]:h-auto [&_table]:max-w-full [&_table]:block [&_table]:overflow-x-auto"
+            />
+          ) : (
+            blog.content.split('\n\n').map((paragraph, index) => (
+              <p key={index} className="break-words">{paragraph}</p>
+            ))
+          )}
+        </div>
+
+      </article>
     </>
   );
 };
