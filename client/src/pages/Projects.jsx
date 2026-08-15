@@ -75,8 +75,8 @@ export const Projects = () => {
   return (
     <>
       <Helmet>
-        <title>Projects &amp; Portfolio | Tahir Hossen</title>
-        <meta name="description" content="Explore full-stack software applications, open-source projects, and MERN stack systems created by Tahir Hossen." />
+        <title>Projects &amp; Portfolio | Sazzad Hossen</title>
+        <meta name="description" content="Explore full-stack software applications, open-source projects, and MERN stack systems created by Sazzad Hossen." />
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">

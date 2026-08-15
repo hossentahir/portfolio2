@@ -33,7 +33,7 @@ export const AdminDashboard = () => {
   return (
     <>
       <Helmet>
-        <title>Admin Dashboard | Tahir Hossen</title>
+        <title>Admin Dashboard | Sazzad Hossen</title>
         <meta name="description" content="Administration dashboard for managing projects, blogs, and contact messages." />
       </Helmet>
 

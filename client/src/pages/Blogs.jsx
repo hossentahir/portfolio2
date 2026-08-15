@@ -99,8 +99,8 @@ export const Blogs = () => {
   return (
     <>
       <Helmet>
-        <title>Technical Articles &amp; Blog | Tahir Hossen</title>
-        <meta name="description" content="Technical guides, MERN stack tutorials, and web engineering articles written by Tahir Hossen." />
+        <title>Technical Articles &amp; Blog | Sazzad Hossen</title>
+        <meta name="description" content="Technical guides, MERN stack tutorials, and web engineering articles written by Sazzad Hossen." />
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">

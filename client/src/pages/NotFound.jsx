@@ -6,7 +6,7 @@ export const NotFound = () => {
   return (
     <>
       <Helmet>
-        <title>404 Page Not Found | Tahir Hossen</title>
+        <title>404 Page Not Found | Sazzad Hossen</title>
         <meta name="description" content="The page you are looking for does not exist." />
       </Helmet>
 

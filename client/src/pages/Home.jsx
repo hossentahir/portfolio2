@@ -30,7 +30,7 @@ export const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Tahir Hossen | Software Engineering Portfolio</title>
+        <title>Sazzad Hossen | Software Engineering Portfolio</title>
         <meta name="description" content="Full-Stack MERN Developer & Software Engineering student at DIU. Explore projects, technical blogs, and contact details." />
       </Helmet>
 

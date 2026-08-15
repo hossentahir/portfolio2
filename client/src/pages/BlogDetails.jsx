@@ -83,8 +83,8 @@ export const BlogDetails = () => {
   return (
     <>
       <Helmet>
-        <title>{blog.title} | Tahir Hossen Blog</title>
-        <meta name="description" content={`Read ${blog.title} on Tahir Hossen's portfolio.`} />
+        <title>{blog.title} | Sazzad Hossen Blog</title>
+        <meta name="description" content={`Read ${blog.title} on Sazzad Hossen's portfolio.`} />
       </Helmet>
 
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full max-w-full overflow-x-hidden">
