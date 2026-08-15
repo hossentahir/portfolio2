@@ -40,7 +40,7 @@ export const About = () => {
     },
     {
       degree: 'Certificate of Higher Education (Science)',
-      institution: 'Govt Bangabandhu College, Gopalganj',
+      institution: 'Govt Gopalganj College, Gopalganj',
       grade: 'GPA: 5.00',
       details: 'Completed Higher Secondary Certificate in Science with highest Distinction score.'
     },
