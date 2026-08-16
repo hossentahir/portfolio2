@@ -36,7 +36,7 @@ export const Home = () => {
 
       <div>
         <Hero />
-        
+
         {/* Featured Projects Section */}
         <section id="projects" className="border-t border-slate-200 dark:border-slate-800/80 bg-slate-50/50 dark:bg-slate-900/30">
           <Projects />
@@ -49,7 +49,7 @@ export const Home = () => {
               <div className="flex items-center justify-center gap-2 mb-3">
                 <Activity className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                 <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-                  MERN Backend Health Status
+                  Backend Health Status
                 </h2>
               </div>
               <p className="text-sm text-slate-600 dark:text-slate-400 mb-6">
