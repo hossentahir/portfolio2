@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Home } from './pages/Home';
@@ -86,6 +87,7 @@ function App() {
               </div>
             </footer>
           </div>
+          <Analytics />
         </Router>
       </ThemeProvider>
     </HelmetProvider>
