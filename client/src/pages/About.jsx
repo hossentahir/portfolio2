@@ -103,6 +103,21 @@ export const About = () => {
       <Helmet>
         <title>About Me | Sazzad Hossen - Software Engineering Student</title>
         <meta name="description" content="Learn about Sazzad Hossen, Software Engineering student at DIU (CGPA 3.7), Cofounder at SPC Academy, publications, skills, and experience." />
+        <link rel="canonical" href="https://sazzad-engr.vercel.app/about" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="profile" />
+        <meta property="og:url" content="https://sazzad-engr.vercel.app/about" />
+        <meta property="og:title" content="About Me | Sazzad Hossen - Software Engineering Student" />
+        <meta property="og:description" content="Learn about Sazzad Hossen, Software Engineering student at DIU (CGPA 3.7), Cofounder at SPC Academy, publications, skills, and experience." />
+        <meta property="og:image" content="https://sazzad-engr.vercel.app/favicon.svg" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://sazzad-engr.vercel.app/about" />
+        <meta name="twitter:title" content="About Me | Sazzad Hossen - Software Engineering Student" />
+        <meta name="twitter:description" content="Learn about Sazzad Hossen, Software Engineering student at DIU (CGPA 3.7), Cofounder at SPC Academy, publications, skills, and experience." />
+        <meta name="twitter:image" content="https://sazzad-engr.vercel.app/favicon.svg" />
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">

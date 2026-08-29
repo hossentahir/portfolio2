@@ -77,6 +77,21 @@ export const Projects = () => {
       <Helmet>
         <title>Projects &amp; Portfolio | Sazzad Hossen</title>
         <meta name="description" content="Explore full-stack software applications, open-source projects, and MERN stack systems created by Sazzad Hossen." />
+        <link rel="canonical" href="https://sazzad-engr.vercel.app/projects" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sazzad-engr.vercel.app/projects" />
+        <meta property="og:title" content="Projects &amp; Portfolio | Sazzad Hossen" />
+        <meta property="og:description" content="Explore full-stack software applications, open-source projects, and MERN stack systems created by Sazzad Hossen." />
+        <meta property="og:image" content="https://sazzad-engr.vercel.app/favicon.svg" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://sazzad-engr.vercel.app/projects" />
+        <meta name="twitter:title" content="Projects &amp; Portfolio | Sazzad Hossen" />
+        <meta name="twitter:description" content="Explore full-stack software applications, open-source projects, and MERN stack systems created by Sazzad Hossen." />
+        <meta name="twitter:image" content="https://sazzad-engr.vercel.app/favicon.svg" />
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">

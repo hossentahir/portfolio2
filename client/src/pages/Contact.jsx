@@ -59,6 +59,21 @@ export const Contact = () => {
       <Helmet>
         <title>Contact Me | Sazzad Hossen</title>
         <meta name="description" content="Send a message to Sazzad Hossen for project inquiries, collaborations, or engineering roles." />
+        <link rel="canonical" href="https://sazzad-engr.vercel.app/contact" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sazzad-engr.vercel.app/contact" />
+        <meta property="og:title" content="Contact Me | Sazzad Hossen" />
+        <meta property="og:description" content="Send a message to Sazzad Hossen for project inquiries, collaborations, or engineering roles." />
+        <meta property="og:image" content="https://sazzad-engr.vercel.app/favicon.svg" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://sazzad-engr.vercel.app/contact" />
+        <meta name="twitter:title" content="Contact Me | Sazzad Hossen" />
+        <meta name="twitter:description" content="Send a message to Sazzad Hossen for project inquiries, collaborations, or engineering roles." />
+        <meta name="twitter:image" content="https://sazzad-engr.vercel.app/favicon.svg" />
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">

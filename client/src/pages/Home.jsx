@@ -32,6 +32,21 @@ export const Home = () => {
       <Helmet>
         <title>Sazzad Hossen | Software Engineering Portfolio</title>
         <meta name="description" content="Full-Stack MERN Developer & Software Engineering student at DIU. Explore projects, technical blogs, and contact details." />
+        <link rel="canonical" href="https://sazzad-engr.vercel.app/" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sazzad-engr.vercel.app/" />
+        <meta property="og:title" content="Sazzad Hossen | Software Engineering Portfolio" />
+        <meta property="og:description" content="Full-Stack MERN Developer & Software Engineering student at DIU. Explore projects, technical blogs, and contact details." />
+        <meta property="og:image" content="https://sazzad-engr.vercel.app/favicon.svg" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://sazzad-engr.vercel.app/" />
+        <meta name="twitter:title" content="Sazzad Hossen | Software Engineering Portfolio" />
+        <meta name="twitter:description" content="Full-Stack MERN Developer & Software Engineering student at DIU. Explore projects, technical blogs, and contact details." />
+        <meta name="twitter:image" content="https://sazzad-engr.vercel.app/favicon.svg" />
       </Helmet>
 
       <div>

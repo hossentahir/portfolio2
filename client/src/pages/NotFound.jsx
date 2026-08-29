@@ -8,6 +8,7 @@ export const NotFound = () => {
       <Helmet>
         <title>404 Page Not Found | Sazzad Hossen</title>
         <meta name="description" content="The page you are looking for does not exist." />
+        <meta name="robots" content="noindex, follow" />
       </Helmet>
 
       <div className="min-h-[75vh] flex items-center justify-center px-4 py-16 text-center">

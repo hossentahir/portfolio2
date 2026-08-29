@@ -80,11 +80,38 @@ export const BlogDetails = () => {
     );
   }
 
+  const getExcerpt = (htmlContent, maxLength = 160) => {
+    if (!htmlContent) return '';
+    const noHtml = htmlContent.replace(/<[^>]*>?/gm, ' ');
+    const clean = noHtml.replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/#|\*|`|\[|\]/g, '').replace(/\s+/g, ' ').trim();
+    if (clean.length <= maxLength) return clean;
+    return clean.substring(0, maxLength) + '...';
+  };
+
+  const blogExcerpt = getExcerpt(blog.content) || `Read ${blog.title} on Sazzad Hossen's portfolio.`;
+  const blogUrl = `https://sazzad-engr.vercel.app/blog/${blog.slug}`;
+  const blogImage = blog.thumbnail || 'https://sazzad-engr.vercel.app/favicon.svg';
+
   return (
     <>
       <Helmet>
-        <title>{blog.title} | Sazzad Hossen Blog</title>
-        <meta name="description" content={`Read ${blog.title} on Sazzad Hossen's portfolio.`} />
+        <title>{`${blog.title} | Sazzad Hossen Blog`}</title>
+        <meta name="description" content={blogExcerpt} />
+        <link rel="canonical" href={blogUrl} />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={blogUrl} />
+        <meta property="og:title" content={`${blog.title} | Sazzad Hossen Blog`} />
+        <meta property="og:description" content={blogExcerpt} />
+        <meta property="og:image" content={blogImage} />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={blogUrl} />
+        <meta name="twitter:title" content={`${blog.title} | Sazzad Hossen Blog`} />
+        <meta name="twitter:description" content={blogExcerpt} />
+        <meta name="twitter:image" content={blogImage} />
       </Helmet>
 
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full max-w-full overflow-x-hidden">

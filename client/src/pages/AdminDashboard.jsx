@@ -35,6 +35,7 @@ export const AdminDashboard = () => {
       <Helmet>
         <title>Admin Dashboard | Sazzad Hossen</title>
         <meta name="description" content="Administration dashboard for managing projects, blogs, and contact messages." />
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">

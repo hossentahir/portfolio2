@@ -57,6 +57,7 @@ export const AdminLogin = () => {
       <Helmet>
         <title>Admin Login | Sazzad Hossen</title>
         <meta name="description" content="Admin portal login for Sazzad Hossen's portfolio application." />
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
       <div className="min-h-[80vh] flex items-center justify-center px-4 py-12">
