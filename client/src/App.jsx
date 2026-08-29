@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
+import { Analytics } from '@vercel/analytics/react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
@@ -21,6 +22,7 @@ function App() {
       <ThemeProvider>
         <Router>
           <Toaster position="top-right" reverseOrder={false} />
+          <Analytics />
           <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
             <Navbar />
             <main className="flex-grow">
