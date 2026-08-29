@@ -1,0 +1,44 @@
+# Vercel Web Analytics Installation
+
+Successfully implemented Vercel Web Analytics for this React + Vite portfolio project.
+
+## Changes Made
+
+### 1. Package Installation
+- **Installed**: `@vercel/analytics` version 2.0.1
+- **Package Manager**: npm (as used by the project)
+- **Dependencies Updated**: package.json and package-lock.json
+
+### 2. Code Integration
+- **Modified File**: `src/App.jsx`
+- **Changes**:
+  - Added import statement: `import { Analytics } from '@vercel/analytics/react';`
+  - Added `<Analytics />` component inside the Router, after the Toaster component
+  - The Analytics component is placed at the top level of the app to track all page views and interactions
+
+### 3. Implementation Details
+- **Framework**: React + Vite
+- **Documentation Used**: Official Vercel Analytics Quickstart Guide (fetched live from https://vercel.com/docs/analytics/quickstart)
+- **Integration Method**: React/Create React App approach (suitable for Vite projects)
+- **Placement**: Added Analytics component in the App component to ensure it tracks all routes
+
+### 4. Testing & Verification
+✅ **Build Test**: Successfully built the project with `npm run build`
+✅ **Linter**: No new errors introduced (oxlint passed with only pre-existing warnings)
+✅ **Dependencies**: package-lock.json properly updated
+
+## Next Steps for Deployment
+
+After deploying to Vercel, to enable analytics:
+1. Navigate to your Vercel dashboard
+2. Select the project
+3. Go to Analytics in the sidebar
+4. Click the Enable button
+5. This will add the required `/_vercel/insights/*` routes
+6. Verify analytics are working by checking the Network tab in browser DevTools for requests to the analytics endpoint
+
+## Notes
+- The Analytics component is framework-agnostic and automatically handles page view tracking
+- No additional configuration is required in the code
+- Analytics data will appear in the Vercel dashboard after deployment and user visits
+- The implementation follows Vercel's official best practices for React applications
